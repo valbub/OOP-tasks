@@ -9,7 +9,7 @@ class Integer(object):
             new.module = self.module + summand.module
             return new.module
         else:
-            return 'Error: different types.'
+            raise Exception( 'Error: different types.' )
 
 class Rational(object):
     def __init__(self, number):
@@ -20,7 +20,7 @@ class Rational(object):
             new.module = self.module + summand.module
             return new.module
         else:
-            return 'Error: different types.'
+            raise Exception( 'Error: different types.' )
 
 class Complex(object):
     def __init__(self, realpart=None, imagpart =None):
@@ -32,13 +32,13 @@ class Complex(object):
 #        self.real = value
 #    real = property(getreal, setreal, "Property of real")
     def add(self, summand):
-         if isinstance (summand, Complex):
+        if isinstance (summand, Complex):
             new = Complex()
             new.real = self.real + summand.real
             new.imaginary = self.imaginary + summand.imaginary
             return (new.real, new.imaginary)
-         else:
-            return 'Error: different types.'
+        else:
+            raise Exception( 'Error: different types.' )
 
 
 x1 = Complex(1, -4)
