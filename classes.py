@@ -27,13 +27,3 @@ class Complex(Number):
     def __init__(self, real=0, imag=0):
         self.real = real
         self.imag = imag
-
-
-
-ex1 = Complex(1.15, 6)
-ex2 = Real(2.67)
-
-def sum(a, b):
-   return a.add(b)
-
-print sum(ex1, ex2)
