@@ -14,3 +14,7 @@ def sum(a, b):
 res = sum(ex4, ex5)
 
 print res, type(res)
+
+'''Result from
+      return '%s'% self.__dict__:
+{'real': 26, 'imaginary': 67.32, 'jcomponent': 8, 'kcomponent': 16.98} <class 'classes.Quaternion'>'''
