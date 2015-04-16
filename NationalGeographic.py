@@ -6,54 +6,49 @@ class Animal(object):
     def eat(self):
         pass
     def whoami(self):
-        print type(self)
+        print 'Animal'
 
 class Mammal(Animal):
     def breath(self):
         pass
     def whoami(self):
-        print type(self)
+        print 'Mammal'
 
 class Winged(Animal):
     def flap(self):
         print 'Flap-flap!'
     def whoami(self):
-        print type(self)
+        print 'Winged'
 
-Bat = Mammal()
-Bat = Winged()
+LittleBat = Mammal()
+LittleBat = Winged()
 
-Bat.whoami()
-# output:
+LittleBat.whoami()
+# output:NationalGeographic.py
 # <class '__main__.Winged'>
 
-AnotherBat = Winged()
-AnotherBat = Mammal()
 
-AnotherBat.whoami()
-# output:
-# <class '__main__.Mammal'>
+# class Bat(Animal, Mammal, Winged):
+#     pass
+# OUTPUT:
+# TypeError: Error when calling the metaclass bases
+#    Cannot create a consistent method resolution
+# order (MRO) for bases Animal, Mammal, Winged
 
-AnotherBat = Winged()
+class Bat(Mammal, Winged):
+    pass
 
-AnotherBat.whoami()
-# output:
-# <class '__main__.Winged'>
+NewBat = Bat()
+NewBat.whoami()
 
-Bird = Animal()
-Bird = Winged()
+# OUTPUT:
+# Mammal
 
-Bird.whoami()
-# output:
-# <class '__main__.Winged'>
+class Bat(Winged, Mammal):
+    pass
 
-AnotherBird = Winged()
-AnotherBird = Animal()
+NewBat = Bat()
+NewBat.whoami()
 
-AnotherBird.whoami()
-# output:
-# <class '__main__.Animal'>
-
-# AnotherBird.flap()
-# output:
-# AttributeError: 'Animal' object has no attribute 'flap'
+# OUTPUT:
+# Winged
