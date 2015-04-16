@@ -52,3 +52,31 @@ NewBat.whoami()
 
 # OUTPUT:
 # Winged
+
+class SuperBat_1 (Bat, Mammal):
+    pass
+
+NewBat = SuperBat_1()
+NewBat.whoami()
+
+# OUTPUT:
+# Winged
+
+class SuperBat_1 (Bat, Winged):
+    pass
+
+NewBat = SuperBat_1()
+NewBat.whoami()
+
+# OUTPUT:
+# Winged
+
+#class SuperBat_1 (Winged, Bat):
+#    pass
+
+#NewBat = SuperBat_1()
+#NewBat.whoami()
+
+# TypeError: Error when calling the metaclass bases
+#     Cannot create a consistent method resolution
+# order (MRO) for bases Bat, Winged
